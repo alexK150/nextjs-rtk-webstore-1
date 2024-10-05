@@ -1,0 +1,25 @@
+.btnPrimary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  background: $color-purple;
+  color: $color-white;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  border-radius: .2rem;
+}
+
+.btnSecondary{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  background: $color-skin;
+  color: $color-purple;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  border-radius: .2rem;
+}

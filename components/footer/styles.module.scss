@@ -1,0 +1,197 @@
+.footer {
+  background: #f8f8f8;
+
+  &__container {
+    position: relative;
+    display: grid;
+    grid-template-areas:
+    "links"
+    "socials"
+    "newsletter"
+    "payment"
+    "copyright";
+    gap: 1.6rem;
+    padding: 1.6rem;
+
+    @media (min-width: 1200px) {
+      max-width: 120rem;
+      margin: 0 auto;
+    }
+
+    @include respond(tab-port) {
+      grid-template-areas:
+      "links socials"
+      "links newsletter"
+      "copyright payment";
+    }
+
+    @include respond(phone) {
+      grid-template-areas:
+      "links"
+      "socials"
+      "newsletter"
+      "payment"
+      "copyright";
+    }
+  }
+
+  img {
+    width: 14rem;
+    height: 4rem;
+    object-fit: contain;
+  }
+
+  &__links {
+    display: grid;
+    grid-area: links;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+
+    ul {
+      padding: .5rem;
+
+      b {
+        text-transform: uppercase;
+      }
+
+      li {
+        font-size: 1.2rem;
+
+        a {
+          color: #222;
+          line-height: 2.3rem;
+          position: relative;
+          transition: text-decoration 1s ease-in-out;
+
+          &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(90deg, blue, black);
+            background-repeat: no-repeat;
+            transition: width .3s ease-in;
+          }
+
+          &:hover::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__socials {
+    grid-area: socials;
+
+    section {
+      ul {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+
+        li {
+          font-size: 3.2rem;
+          color: darkgrey;
+          transition: color .4s ease-in-out;
+
+          &:hover {
+            color: dodgerblue;
+          }
+        }
+      }
+    }
+  }
+
+  &__newsLetter {
+    grid-area: newsletter;
+
+    input {
+      outline: none;
+      border: 1px solid darkgrey;
+      flex: 1;
+      height: 4rem;
+      font-size: 1.4rem;
+      padding-left: 1rem;
+    }
+
+    button {
+      width: 16rem;
+    }
+
+    p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: darkgrey;
+
+      a {
+        color: dodgerblue;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__emailInputContainer {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  &__payment {
+    grid-area: payment;
+
+    &Logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.6rem;
+
+      img {
+        width: 7rem;
+        height: 3.6rem;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__copyright {
+    grid-area: copyright;
+
+    section {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      font-size: 1.2rem;
+      color: darkgrey;
+      padding-bottom: 1rem;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      column-gap: 2rem;
+
+      li {
+        position: relative;
+        text-decoration: underline;
+
+        &::after {
+          content: "";
+          width: 1px;
+          height: 1.5rem;
+          background: darkgrey;
+          position: absolute;
+          right: -1rem;
+        }
+
+        &:last-of-type::after {
+          display: none;
+        }
+      }
+    }
+  }
+}

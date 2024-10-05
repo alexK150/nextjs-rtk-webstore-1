@@ -1,0 +1,21 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 21 | /     @include respond(tab-port) {
+ * 22 | |       grid-template-areas:
+ * 23 | |       "links socials"
+ * 24 | |       "links newsletter"
+ * 25 | |       "copyright payment";
+ * 26 | \     }
+ *    '
+ *   styles.module.scss 21:5  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: Undefined mixin.\a    \2577 \a 21 \2502  \250c      @include respond(tab-port) {\a 22 \2502  \2502        grid-template-areas:\a 23 \2502  \2502        "links socials"\a 24 \2502  \2502        "links newsletter"\a 25 \2502  \2502        "copyright payment";\a 26 \2502  \2514      }\a    \2575 \a   styles.module.scss 21:5  root stylesheet';
+}

@@ -1,0 +1,42 @@
+/*
+0 - 600px: Phone
+600 - 900px: Tablet portrait
+900 - 1200px: Tablet landscape
+[1200 - 1800px] normal styles
+1800px + : Big desktop
+
+$breakpoint argument:
+- phone
+- tab-port
+- tab-land
+- big-desc
+
+1em = 16px
+*/
+.btnPrimary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #A64AC9;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 0.2rem;
+}
+
+.btnSecondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #FFB48F;
+  color: #A64AC9;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 0.2rem;
+}
+
+/*# sourceMappingURL=main.css.map */
