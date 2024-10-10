@@ -6,13 +6,14 @@ import {MdOutlineSecurity} from "react-icons/md";
 import {BsFillBagHeartFill, BsPersonCircle} from "react-icons/bs";
 import {IoIosArrowDropdown} from "react-icons/io";
 import {UserMenu} from "@/components/header/UserMenu";
+import {useSession} from "next-auth/react";
 
 const {
     topMenu, topMenu__container, topMenu__list, profile, flagImage, topMenu__list__menuEl
 } = styles;
 
 export default function TopMenu({country}) {
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const { data: session } = useSession();
     const [isVisible, setIsVisible] = useState(false);
     const [timer, setTimer] = useState(null);
 
@@ -68,11 +69,11 @@ export default function TopMenu({country}) {
                     <li className={`${topMenu__list__menuEl} dropdown`}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}>
-                        {isLoggedIn ? (
+                        {session ? (
                             <div className={profile}>
-                                <Image src='https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg'
+                                <Image src={session.user.image}
                                        alt={'User image'} width={28} height={28}/>
-                                <span>Alex</span>
+                                <span>{session.user.name}</span>
                                 <IoIosArrowDropdown/>
                             </div>
                         ) : (
@@ -82,7 +83,7 @@ export default function TopMenu({country}) {
                                 <IoIosArrowDropdown/>
                             </div>
                         )}
-                        {isVisible && <UserMenu isLoggedIn={isLoggedIn} isVisible={isVisible}/>}
+                        {isVisible && <UserMenu session={session} isVisible={isVisible}/>}
                     </li>
                 </ul>
             </div>

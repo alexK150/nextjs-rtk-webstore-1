@@ -7,7 +7,7 @@ const nextConfig = {
         prependData: `@import "./styles/main.scss";`
     },
     images: {
-        domains: ['i.pinimg.com']
+        domains: ['i.pinimg.com', 'avatars.githubusercontent.com']
     },
 }
 

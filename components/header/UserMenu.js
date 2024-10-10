@@ -2,26 +2,27 @@ import React from 'react';
 import Image from 'next/image';
 import styles from "./styles.module.scss";
 import Link from "next/link";
+import {signOut, signIn} from "next-auth/react"
 
 const {userMenu, userInfo__image, userInfo__info, btnPrimary, btnSecondary, userInfo, userMenu__dropdown, userMenu__listEl, userMenuVisible} = styles;
 
-export const UserMenu = ({isLoggedIn, isVisible}) => {
+export const UserMenu = ({session, isVisible}) => {
     return (
         <div className={`${userMenu} ${isVisible ? userMenuVisible : ''}`}>
             <h4>Welcome</h4>
-            {isLoggedIn ?
+            {session ?
                 <div className={userInfo}>
                     <Image className={userInfo__image}
-                         src='https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg' alt="" width={100} height={100}/>
+                         src={session.user.image} alt="" width={100} height={100}/>
                     <div className={userInfo__info}>
                         <span>Welcome Back, </span>
                         <h3>Alex</h3>
-                        <span>Sign out</span>
+                        <span onClick={() => signOut()}>Sign out</span>
                     </div>
                 </div>
                 : (
                     <div className={userInfo}>
-                        <button className={btnPrimary}>Register</button>
+                        <button onClick={() => signIn()} className={btnPrimary}>Register</button>
                         <button className={btnSecondary}>Login</button>
                     </div>
                 )
