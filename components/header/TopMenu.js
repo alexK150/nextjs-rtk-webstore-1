@@ -46,9 +46,11 @@ export default function TopMenu({country}) {
                 <div></div>
                 <ul className={topMenu__list}>
                     <li className={topMenu__list__menuEl}>
-                        <Image width={28} height={28} className={flagImage} src={country.flag}
+                        <Image width={28} height={28}
+                               className={flagImage}
+                               src={country?.flag}
                                alt="Deutschland Flag"/>
-                        <span>{country.name} / eur</span>
+                        <span>{country?.name} / eur</span>
                     </li>
                     <li className={topMenu__list__menuEl}>
                         <MdOutlineSecurity/>

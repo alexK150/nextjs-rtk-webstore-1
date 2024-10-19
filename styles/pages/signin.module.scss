@@ -1,0 +1,66 @@
+.login {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    padding: 4.8rem;
+    &:last-of-type {
+      margin-top: 4.8rem;
+
+    }
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 37rem;
+    .back__svg {
+      width: 5rem;
+      height: 5rem;
+      border: 1px solid rgba(102, 102, 102, 0.342);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      &:hover {
+        border-color: $color-yellow;
+        svg {
+          fill: deepskyblue;
+        }
+      }
+      svg {
+        width: 2rem;
+        height: 2rem;
+        fill: #222;
+      }
+    }
+    span {
+      font-weight: 600;
+      font-size: 1.4rem;
+      a {
+        color: $color-purple;
+        cursor: pointer;
+        border-bottom: 1px solid deepskyblue;
+        padding: .5rem;
+      }
+    };
+  }
+
+  &__form {
+    margin-top: 1.6rem;
+    h1 {
+      font-size: 5rem;
+      margin: 0;
+    }
+    p {
+      color: #222;
+    }
+    form {
+      margin-top: 3.2rem;
+
+    }
+  }
+}

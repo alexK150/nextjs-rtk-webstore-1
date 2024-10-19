@@ -15,6 +15,7 @@
     "classnames": "^2.5.1",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
+    "formik": "^2.2.9",
     "mongodb": "^4.8.0",
     "mongoose": "^7.5.2",
     "next": "13.4.19",
@@ -28,6 +29,7 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.1",
-    "sass": "^1.67.0"
+    "sass": "^1.67.0",
+    "yup": "^0.32.11"
   }
 }

@@ -1,6 +1,5 @@
 //https://next-auth.js.org/getting-started/example
 import NextAuth from "next-auth"
-import TwitterProvider from "next-auth/providers/twitter";
 import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
@@ -16,10 +15,6 @@ export const authOptions = {
         GitHubProvider({
             clientId: process.env.GITHUB_ID,
             clientSecret: process.env.GITHUB_SECRET,
-        }),
-        TwitterProvider({
-            clientId: process.env.TWITTER_ID,
-            clientSecret: process.env.TWITTER_SECRET,
         }),
         FacebookProvider({
             clientId: process.env.FACEBOOK_ID,
