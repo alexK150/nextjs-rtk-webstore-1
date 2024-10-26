@@ -32,3 +32,21 @@
     }
   }
 }
+
+.error {
+  background: red;
+  margin-top: 5rem;
+
+  input {
+    color: #333;
+
+    &::placeholder {
+      color: #fff;
+    }
+  }
+
+  svg {
+    fill: #fff;
+    stroke: #fff;
+  }
+}
